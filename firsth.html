@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Divs with Hyperlinks</title>
+  <style>
+    .content {
+      display: none;
+      padding: 10px;
+      border: 1px solid #ccc;
+      margin-top: 10px;
+    }
+    .active {
+      display: block;
+    }
+    nav a {
+      margin-right: 10px;
+      text-decoration: none;
+      color: blue;
+    }
+  </style>
+</head>
+<body>
+
+  <nav>
+    <a href="#div1" onclick="showDiv('div1')">Show Div 1</a>
+    <a href="#div2" onclick="showDiv('div2')">Show Div 2</a>
+    <a href="#div3" onclick="showDiv('div3')">Show Div 3</a>
+  </nav>
+
+  <div id="div1" class="content active">
+    <h2>Div 1</h2>
+    <p>This is the first content section.</p>
+  </div>
+
+  <div id="div2" class="content">
+    <h2>Div 2</h2>
+    <p>This is the second content section.</p>
+  </div>
+
+  <div id="div3" class="content">
+    <h2>Div 3</h2>
+    <p>This is the third content section.</p>
+  </div>
+
+  <script>
+    function showDiv(id) {
+      const divs = document.querySelectorAll('.content');
+      divs.forEach(div => div.classList.remove('active'));
+      document.getElementById(id).classList.add('active');
+    }
+  </script>
+
+</body>
+</html>
+
